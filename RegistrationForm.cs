@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace BeautyShop
 {
-    public partial class Form1 : Form
+    public partial class RegistrationForm : Form
     {
-        public Form1()
+        public RegistrationForm()
         {
             InitializeComponent();
-            //RegistrationForm registration = new RegistrationForm();
-            //registration.Show();
         }
     }
 }
