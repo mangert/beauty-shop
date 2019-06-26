@@ -12,11 +12,24 @@ namespace BeautyShop
 {
     public partial class Form1 : Form
     {
+        public static User currentUser = null;
+        RegistrationForm registration = new RegistrationForm();
+
         public Form1()
         {
-            InitializeComponent();
-            //RegistrationForm registration = new RegistrationForm();
-            //registration.Show();
+            InitializeComponent();       
+            
         }
+        //события формы
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.Hide();            
+            if (registration.ShowDialog() == DialogResult.OK)
+            {
+                invitationLabel.Text = "Добро пожаловать, " + currentUser.UserName;
+                this.Show();
+            }
+            else this.Close();            
+        }        
     }
 }

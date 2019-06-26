@@ -28,13 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.invitationLabel = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // invitationLabel
+            // 
+            this.invitationLabel.AutoSize = true;
+            this.invitationLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.invitationLabel.Font = new System.Drawing.Font("Book Antiqua", 30.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.invitationLabel.ForeColor = System.Drawing.Color.Blue;
+            this.invitationLabel.Location = new System.Drawing.Point(0, 0);
+            this.invitationLabel.Name = "invitationLabel";
+            this.invitationLabel.Size = new System.Drawing.Size(200, 49);
+            this.invitationLabel.TabIndex = 0;
+            this.invitationLabel.Text = "Invitation";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.invitationLabel);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label invitationLabel;
     }
 }
 
