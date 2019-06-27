@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BeautyShop
@@ -39,7 +34,14 @@ namespace BeautyShop
         //события формы
         private void submitButton_Click(object sender, EventArgs e)
         {
+            if (usernameComboBox.SelectedIndex < 0)
+            {
+                infoLabel.Text = "Пользователь не найден";
+                infoLabel.Visible = true;                
+                return;
+            }
             User currentUser = (User)(usernameComboBox.SelectedItem);
+            
             if (Users.ValidatePassword(currentUser, passwordBox.Text))
             {
                 this.DialogResult = DialogResult.OK;
@@ -48,19 +50,21 @@ namespace BeautyShop
             }
                 
             else{                
-                infoLabel.Text = "Неверное имя пользователя или пароль";
+                infoLabel.Text = "Неверная пара логин/пароль";
                 infoLabel.Visible = true;
             }
         }
 
-        private void passwordBox_TextChanged(object sender, EventArgs e)
-        {
-            infoLabel.Visible = false;
+        private void ClearInfoString(object sender, EventArgs e)
+        {            
+            infoLabel.Visible = false;            
         }
 
         private void usernameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             passwordBox.Clear();
+            passwordBox.Text = "";
         }
+        
     }
 }

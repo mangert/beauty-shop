@@ -77,7 +77,8 @@
             this.passwordBox.PasswordChar = '*';
             this.passwordBox.Size = new System.Drawing.Size(224, 20);
             this.passwordBox.TabIndex = 1;
-            this.passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
+            this.passwordBox.TextChanged += new System.EventHandler(this.ClearInfoString);
+            this.passwordBox.Enter += new System.EventHandler(this.ClearInfoString);
             // 
             // submitButton
             // 
